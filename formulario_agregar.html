@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Agregar Producto</title>
+</head>
+<body>
+    <h1>Agregar Producto</h1>
+    <form action="{{ url_for('agregar_producto') }}" method="post">
+        Nombre: <input type="text" name="nombre"><br>
+        Cantidad: <input type="number" name="cantidad"><br>
+        Precio: <input type="text" name="precio"><br>
+        Fecha de Vencimiento: <input type="date" name="fecha_vencimiento"><br>
+        Categoría: <input type="text" name="categoria"><br>
+        <button type="submit">Agregar</button>
+    </form>
+    <a href="{{ url_for('index') }}">Volver a la lista</a>
+</body>
+</html>

@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Editar Producto</title>
+</head>
+<body>
+    <h1>Editar Producto</h1>
+    <form action="{{ url_for('editar_producto', id=producto.id) }}" method="post">
+        Nombre: <input type="text" name="nombre" value="{{ producto.nombre }}"><br>
+        Cantidad: <input type="number" name="cantidad" value="{{ producto.cantidad }}"><br>
+        Precio: <input type="text" name="precio" value="{{ producto.precio }}"><br>
+        Fecha de Vencimiento: <input type="date" name="fecha_vencimiento" value="{{ producto.fecha_vencimiento }}"><br>
+        Categoría: <input type="text" name="categoria" value="{{ producto.categoria }}"><br>
+        <button type="submit">Guardar Cambios</button>
+    </form>
+    <a href="{{ url_for('index') }}">Cancelar</a>
+</body>
+</html>

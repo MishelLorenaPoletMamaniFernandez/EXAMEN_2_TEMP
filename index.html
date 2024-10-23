@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Lista de Productos</title>
+</head>
+<body>
+    <h1>Productos</h1>
+    <ul>
+        {% for producto in productos %}
+        <li>
+            <b>Nombre:</b> {{ producto.nombre }} |
+            <b>Cantidad:</b> {{ producto.cantidad }} |
+            <b>Precio:</b> {{ producto.precio }} |
+            <b>Fecha de Vencimiento:</b> {{ producto.fecha_vencimiento }} |
+            <b>Categoría:</b> {{ producto.categoria }}
+            <form action="{{ url_for('eliminar_producto', id=producto.id) }}" method="post" style="display:inline;">
+                <button type="submit">Eliminar</button>
+            </form>
+            <a href="{{ url_for('editar_producto', id=producto.id) }}">Editar</a>
+        </li>
+        {% endfor %}
+    </ul>
+    <a href="{{ url_for('formulario_agregar') }}">Agregar Producto</a>
+</body>
+</html>
